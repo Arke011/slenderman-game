@@ -8,10 +8,10 @@ public class Flashlight : MonoBehaviour
     public Light light;
     public AudioSource audioSource;
     public AudioClip switchSound;
-    public TMP_Text lightLevelText; // Reference to the TextMeshPro text component
+    public TMP_Text lightLevelText; 
 
-    private float batteryLevel = 3f;
-    private const float maxBatteryLevel = 3f; // Maximum battery level in seconds
+    private float batteryLevel = 120f;
+    private const float maxBatteryLevel = 120f; 
 
     public bool isOn;
 
@@ -37,7 +37,7 @@ public class Flashlight : MonoBehaviour
             Debug.LogError("AudioSource component not found. Make sure the flashlight has an AudioSource component attached.");
         }
 
-        // Turn on the light on startup
+        
         isOn = false;
         light.enabled = false;
     }
@@ -54,17 +54,17 @@ public class Flashlight : MonoBehaviour
             batteryLevel -= Time.deltaTime;
             batteryLevel = Mathf.Max(0.0f, batteryLevel);
 
-            // Turn off the flashlight if the battery level is 0%
+            
             if (batteryLevel == 0.0f)
             {
                 ToggleFlashlight();
             }
         }
 
-        // Update the light level text
+        
         UpdateLightLevelText();
 
-        // Disable the script when battery level is 0%
+       
         if (batteryLevel == 0.0f)
         {
             DisableFlashlight();
