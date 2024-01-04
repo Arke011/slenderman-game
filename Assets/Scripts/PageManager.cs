@@ -33,7 +33,7 @@ public class PageManager : MonoBehaviour
         else if (pages == 4)
         {
             
-           flashlight.batteryLevel -= 30f; 
+            flashlight.batteryLevel -= 30f; 
             enemy.viewDistance += 1000; 
         }
         else if (pages == 5)
