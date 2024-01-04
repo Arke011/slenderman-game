@@ -10,7 +10,7 @@ public class Flashlight : MonoBehaviour
     public AudioClip switchSound;
     public TMP_Text lightLevelText; 
 
-    private float batteryLevel = 120f;
+    public float batteryLevel = 120f;
     private const float maxBatteryLevel = 120f; 
 
     public bool isOn;
